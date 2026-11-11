@@ -1,6 +1,6 @@
 // HiveMQ Public Broker WebSocket Details
 const MQTT_HOST = "broker.hivemq.com";
-const MQTT_PORT = 8000; // WebSocket port for public broker
+const MQTT_PORT = 8884; // Secure WebSocket (WSS) port for HTTPS sites
 const CLIENT_ID = "web_dashboard_" + Math.random().toString(16).substr(2, 8);
 
 // Create Paho MQTT Client instance
