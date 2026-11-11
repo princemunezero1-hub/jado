@@ -1,10 +1,10 @@
 // HiveMQ Public Broker WebSocket Details
 const MQTT_HOST = "broker.hivemq.com";
-const MQTT_PORT = 8884; // Secure WebSocket (WSS) port for HTTPS sites
+const MQTT_PORT = 8000; // WebSocket port for public broker
 const CLIENT_ID = "web_dashboard_" + Math.random().toString(16).substr(2, 8);
 
-// Create Paho MQTT Client instance
-const client = new Paho.MQTT.Client(MQTT_HOST, MQTT_PORT, CLIENT_ID);
+// Create Paho MQTT Client instance with explicit WebSocket path
+const client = new Paho.MQTT.Client(MQTT_HOST, MQTT_PORT, "/mqtt", CLIENT_ID);
 
 // Callback when client loses connection
 client.onConnectionLost = function (responseObject) {
