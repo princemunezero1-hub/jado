@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 IoT Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Paho MQTT Library via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>ESP32 IoT Dashboard</h1>
+        
+        <div class="status-bar">
+            <span>Connection Status: </span>
+            <span id="connection-status" class="status-disconnected">Connecting...</span>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Temperature Card -->
+            <div class="card">
+                <h2>Temperature</h2>
+                <div class="value-display">
+                    <span id="temp-val">--</span>
+                    <span class="unit">°C</span>
+                </div>
+            </div>
+
+            <!-- Humidity Card -->
+            <div class="card">
+                <h2>Humidity</h2>
+                <div class="value-display">
+                    <span id="hum-val">--</span>
+                    <span class="unit">%</span>
+                </div>
+            </div>
+
+            <!-- Red LED Card -->
+            <div class="card">
+                <h2>Red LED (Humidity > 50)</h2>
+                <div class="indicator-container">
+                    <div id="red-led" class="led-circle led-off"></div>
+                    <span id="red-led-text">OFF</span>
+                </div>
+            </div>
+
+            <!-- Green LED Card -->
+            <div class="card">
+                <h2>Green LED (Temp > 50)</h2>
+                <div class="indicator-container">
+                    <div id="green-led" class="led-circle led-off"></div>
+                    <span id="green-led-text">OFF</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
